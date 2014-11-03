@@ -1,0 +1,189 @@
+//DE double espresso
+//E Espresso
+//DMC Double Macciato
+//MC Macciato
+//GB Ginger beer
+//CJ Cranberry Juice 
+//OJ Orange Juice 
+//FM Fresh Mint 
+//HC hot chock 
+//BC Black coffee
+//CasaPiane 1gl casa coste piane
+//EB english breakfast
+//EG earl grey
+//GT green tea
+//M mocha
+//C cappuccino
+//D decaffe
+//S soya
+//FW flat white
+//L latte
+//SWL still water large
+//SPWL sp water L
+//SWS small
+//SPWS small sp
+//E elderflower
+//L lemonade
+//CL camdenLager
+//OttavioRosso 1 gl OttavioRosso
+//Vermentino 1gl Vermentino
+//AJ apple juice
+//WC Whip cream
+//BellottiBianco 1gl BellottiBianco
+//Verticchio 1gl Verticchio
+//R Rooibos
+//X extra shot
+//MILK Milk
+//CM Cammomile
+11:54 EB C
+11:51 GB OJ
+11:46 2BC
+11:44 2CasaPiane
+11:46 HC/Large
+9:56 CJ FM HC
+11:43 EB
+10:02 M
+11:40 C/TA
+11:37 2HC
+11:36 FM/TA
+11:36 OJ
+11:57 EG C/D
+11:58 HC/TA
+11:55 2FW FW/S L
+12:06 OJ 2BC
+12:12 FW L
+12:12 FM
+12:09 L/S
+12:13 C/TA
+14:27 FM 2C
+12:22 SWL
+12:20 2BC
+12:19 FW/TA
+12:41 SWS
+13:01 E CL OttavioRosso
+12:56 GT L L/S C
+12:55 2OJ
+12:57 EG/TA
+13:22 FM EB
+13:36 SWL
+13:32 GT
+13:36 BC/TA
+14:14 GB
+14:12 EB C
+12:46 FM EB
+12:39 GT L
+12:48 FM C
+12:56 AJ
+13:13 2CasaPiane
+13:08 EG
+13:14 WC
+13:17 OJ GT
+13:30 Vermentino
+13:50 bBellottiBianco
+13:49 FW/S/TA
+13:48 FW/S/TA
+13:44 BC
+13:46 SWL
+13:42 3FM
+13:50 2FM
+14:02 bVerticchio
+14:07 SPWL
+14:10 SWL
+12:46 L C
+12:35 BC/Large EB
+12:30 AJ 2EB L C
+12:35 BC
+12:23 BC BC/Large FW L
+12:28 SWL
+12:15 C/TA
+11:16 C
+11:13 FW/TA
+11:12 FW
+11:13 EB
+11:11 DE FW C
+11:11 C/D
+11:24 FM
+11:18 FW L
+11:22 BC EB R
+11:21 3OJ EG
+11:48 FW
+11:53 BC L
+11:49 WC
+10:56 M/Large
+10:56 BC
+10:55 BC EB
+10:55 2L C
+10:53 C/D
+11:09 CJ
+11:03 HC L
+10:43 DMC/TA
+10:42 OJ
+10:41 OJ FM
+10:39 FW HC
+10:40 L/Large
+10:39 C/X
+10:37 DMC
+10:40 FW/TA
+10:37 C
+10:36 2OJ 2L
+10:36 FW/TA
+10:35 EB C
+10:33 HC
+10:33 AJ EB
+11:02 L/TA C/D/TA
+10:43 2L
+10:30 C
+10:28 AJ OJ EB DE HC/L
+10:27 HC C/D
+10:17 FW
+9:53 FW
+9:51 MC
+9:51 EG C/D
+9:47 FW C
+9:48 BC
+9:46 OJ C
+9:47 2OJ BC
+10:01 2C
+10:14 3OJ CJ 2BC EB E
+10:12 FM E
+10:11 L/Large
+10:08 2C
+10:08 BC C
+10:07 C/D
+10:22 2C
+10:23 FM BC
+10:21 GT HC
+10:18 BC
+9:29 BC C/S
+9:27 L
+9:26 C
+9:25 2BC FW
+9:19 L C
+9:18 CJ BC DE DMC 2C
+9:17 BC
+9:16 AJ L
+9:13 2BC
+9:11 MILK BC CM EB HC L 2C
+9:13 BC
+9:09 C/S
+9:04 2L
+9:06 DE DMC
+9:04 BC/Large L/Large
+9:02 OJ EG C
+9:01 C/S/TA
+9:39 MC
+9:39 L
+9:37 MC
+9:41 L/S/TA
+9:40 BC
+9:54 OJ 2C
+9:53 C
+9:34 BC
+9:32 BC L
+9:30 DE
+9:31 BC/TA
+14:28 C/TA
+14:23 2C
+14:26 C
+14:23 L
+14:21 L/S
