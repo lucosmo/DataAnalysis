@@ -18,7 +18,7 @@
 //S soya
 //FW flat white
 //L latte
-//SWL still water large
+//SWL still water L
 //SPWL sp water L
 //SWS small
 //SPWS small sp
@@ -39,7 +39,7 @@
 11:51 GB OJ
 11:46 2BC
 11:44 2CasaPiane
-11:46 HC/Large
+11:46 HC/L
 9:56 CJ FM HC
 11:43 EB
 10:02 M
@@ -90,10 +90,10 @@
 14:07 SPWL
 14:10 SWL
 12:46 L C
-12:35 BC/Large EB
+12:35 BC/L EB
 12:30 AJ 2EB L C
 12:35 BC
-12:23 BC BC/Large FW L
+12:23 BC BC/L FW L
 12:28 SWL
 12:15 C/TA
 11:16 C
@@ -109,7 +109,7 @@
 11:48 FW
 11:53 BC L
 11:49 WC
-10:56 M/Large
+10:56 M/L
 10:56 BC
 10:55 BC EB
 10:55 2L C
@@ -120,7 +120,7 @@
 10:42 OJ
 10:41 OJ FM
 10:39 FW HC
-10:40 L/Large
+10:40 L/L
 10:39 C/X
 10:37 DMC
 10:40 FW/TA
@@ -146,7 +146,7 @@
 10:01 2C
 10:14 3OJ CJ 2BC EB E
 10:12 FM E
-10:11 L/Large
+10:11 L/L
 10:08 2C
 10:08 BC C
 10:07 C/D
@@ -168,7 +168,7 @@
 9:09 C/S
 9:04 2L
 9:06 DE DMC
-9:04 BC/Large L/Large
+9:04 BC/L L/L
 9:02 OJ EG C
 9:01 C/S/TA
 9:39 MC
