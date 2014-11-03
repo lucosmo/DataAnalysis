@@ -31,14 +31,32 @@ $coffee=array(
 "BC"=>0;
 "BCD"=>0;);
 
-function readDrink($drink)
+function readDrink($drink,&$coffee)
 {
 	$n=0;
 	$signs=count($drink);
+	$drinkName="";
+	$inDrinkName=true;
 	for($i=0;$i<$signs;$i++)
 	{
+		
 		if(is_digit($drink[$i])) $n=$drink[$i];
-		else $n=1;
+		else 
+		{
+			$n=1;
+			
+			if(ctype_alpha($drink[$i])&&$inDrinkName)
+			{
+				$drinkName.=$drink[$i];
+				continue;
+			}
+			elseif($drink[$i]=="/")
+			{
+				$inDrinkName=false;
+				
+			}
+		}
+		
 		
 	}
 }
