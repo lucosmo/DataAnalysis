@@ -1,0 +1,173 @@
+//DE double espresso
+//E Espresso
+//DMC Double Macciato
+//MC Macciato
+//GB Ginger beer
+//CJ Cranberry Juice 
+//OJ Orange Juice 
+//FM Fresh Mint 
+//HC hot chock 
+//BC Black coffee
+//CasaPiane 1gl casa coste piane
+//EB english breakfast
+//EG earl grey
+//GT green tea
+//M mocha
+//C cappuccino
+//D decaffe
+//S soya
+//FW flat white
+//L latte
+//SWL still water L
+//SPWL sp water L
+//SWS small
+//SPWS small sp
+//E elderflower
+//L lemonade
+//CL camdenLager
+//OttavioRosso 1 gl OttavioRosso
+//Vermentino 1gl Vermentino
+//AJ apple juice
+//WC Whip cream
+//BellottiBianco 1gl BellottiBianco
+//Verticchio 1gl Verticchio
+//R Rooibos
+//X extra shot
+//MILK Milk
+//CM Cammomile
+//PA pale ale
+//GWB Gentelm wheat beer
+//CL camden lager
+//ADemua
+//RueDeLa RUE DE LA SOIF
+//Melonix
+//DonChisciot DonChisciot
+//WA WHITE AMERCICANO TA
+13:11 E PA
+9:52 BC L
+9:09 C
+9:50 C
+9:22 L/L
+9:16 OJ
+8:08 2FW
+8:02 FW/TA
+15:04 SWL
+13:23 2ADemua
+14:22 2OttavioRosso
+14:59 C
+14:58 SWL E RueDeLa
+14:56 E GB
+15:20 Melonix
+15:14 SE C
+15:08 ADemua Tinajas Malvajiza
+15:09 E
+13:45 FW/TA
+13:45 L/TA
+13:45 2FM
+13:46 AJ
+13:53 C
+14:00 SWL
+14:00 2C
+14:14 AJ BC
+14:17 C/TA
+14:20 GWB Vermentino OttavioRosso
+14:26 2EG
+14:25 SPWS
+14:24 SPWL
+14:27 BC BC/D
+14:41 E HC Melonix
+14:49 SPWL
+13:37 DE
+13:30 2FW
+13:32 E
+13:31 AJ
+13:43 FW/S/TA WA/TA
+12:41 DonChisciot
+13:04 2E
+13:09 C
+10:14 BC/L
+10:10 FW
+10:09 EB C
+10:04 FW
+10:04 BC
+10:16 BC L
+10:20 FW/S/TA
+10:23 M/TA
+10:25 FW/TA
+10:22 C
+10:33 FW
+10:38 2C/TA
+10:42 L/TA
+11:00 FW
+10:58 2C C/D
+10:59 BC/D
+10:50 L
+10:50 OJ BC FW
+10:49 FM GT
+10:49 FW
+10:45 BC
+10:43 2FW/S
+11:58 L
+11:59 FW
+11:56 FW/TA
+11:55 FM
+11:51 EB
+11:51 RueDeLa
+11:50 2AJ
+11:50 BC
+11:38 BC EB
+11:36 FM L
+11:29 OJ L L/S SE 2C
+8:09 BC/TA
+8:46 OJ L
+9:03 FW
+9:03 FM
+9:03 BC
+8:52 2C
+8:50 C
+8:40 L/TA
+9:06 C/TA
+9:14 WA/TA
+9:23 L/S/TA
+9:34 BC
+9:43 OJ
+9:41 FW
+15:28 BC
+13:28 SWS
+13:26 2EB
+13:25 2FW
+13:22 C
+13:21 GT MC
+13:11 L
+12:45 2Vermentino
+12:38 bAroaTinto
+12:38 BC 2EB
+12:48 SWL
+12:46 GB BellBianco
+12:45 2CasaPiane
+12:45 2Verdicchio
+12:58 FW/TA
+12:57 2CasaPiane
+12:55 BC L
+13:15 C
+12:26 E
+12:30 L
+12:32 Vermentino RueDeLa
+15:23 2FW
+12:31 Tinajas VignetoCara
+12:31 SPWL
+12:17 DE L C
+11:22 WA/TA
+11:10 C
+9:49 GT
+15:37 FM DE
+9:55 FW L
+9:08 EG
+10:06 FW/TA
+10:05 C/TA WA/TA
+10:05 FW/TA
+11:05 BC/D
+11:07 L
+11:21 FM
+11:18 FW/S
+11:17 BC/D SE

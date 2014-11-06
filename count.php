@@ -1,6 +1,6 @@
 <?php
 $coffee=(array)null;
-
+$fileName="29-10-2014.txt";
 function readDrink($drink)
 {
 	$n=1;
@@ -10,7 +10,7 @@ function readDrink($drink)
 	$coffee=&$GLOBALS['coffee'];
 	for($i=0;$i<$signs;$i++)
 	{
-		if($i==0 && is_numeric($drink[$i])) {$n=$drink[$i];continue;}
+		if($i==0 && is_numeric($drink[$i])) {$n=(int)$drink[$i];continue;}
 		else 
 		{
 			if(ctype_alpha($drink[$i])&&$inDrinkName)
@@ -31,22 +31,26 @@ function readDrink($drink)
 	
 }
 
+function readTime($buffer)
+{
+	//echo strtotime($buffer)."<br>";
+}
+
 function readBuffer($buffer)
 {
 	$drink=explode(" ",$buffer);
 	$drinks=count($drink);
+	readTime($drink[0]);
 	for($i=1;$i<$drinks;$i++)
-	{
 		readDrink($drink[$i]);
-	}
 }
-$handle=@fopen("02-11-2014.txt","r");
+$handle=@fopen($fileName,"r");
 if($handle)
 {
 	while(($buffer=fgets($handle))!=false)
 	{
-		$buffer=substr($buffer,0,count($buffer)-3);
-		if($buffer[0]=='/'&&$buffer[1]=='/') continue;
+		$buffer=substr($buffer,0,count($buffer)-3); // -cr - lf
+		if($buffer[0]=='/'&&$buffer[1]=='/') continue; // ignore code explanation in test file header
 		readBuffer($buffer);
 		
 	}
