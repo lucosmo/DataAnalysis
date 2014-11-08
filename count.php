@@ -19,6 +19,7 @@ function howMDrinksInPeriod($coffeeTime, &$coffeePeriod, $time1, $time2)
 		{
 			if($value[$i]>=$time1 && $value[$i]<=$time2)
 				$coffeePeriod[]=putOn($key,$value[$i]);
+				
 		}
 	}
 }
@@ -46,6 +47,7 @@ function readDrink($drink,$time)
 		if(strlen($drinkName)==0) continue;
 	}
 	if(strlen($drinkName)!=0){
+		
 		if(array_key_exists($drinkName,$coffee)){
 			$coffee[$drinkName]+=$n;
 			for($i=0;$i<$n;$i++)
@@ -53,7 +55,8 @@ function readDrink($drink,$time)
 		}
 		else{
 			$coffee[$drinkName]=$n;
-			$coffeeTime[$drinkName][]=$time;
+			for($i=0;$i<$n;$i++)
+				$coffeeTime[$drinkName][]=$time;
 		}
 	}
 	
