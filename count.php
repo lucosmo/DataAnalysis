@@ -1,11 +1,26 @@
 <?php
 $coffee=(array)null; // array of names of drinks as key and number of drinks as value
 $coffeeTime=(array)null; // temprorary array of time of order - just for test, tommorow wanna remove it
+$coffeePeriod=(array)null;
 $fileName="29-10-2014.txt";
 
-function howMDrinksInPeriod($coffeeArray, $time1, $time2)
+
+
+function putOn($drink, $time)
 {
-	
+	return $a[$drink]=$time;
+}
+function howMDrinksInPeriod($coffeeTime, &$coffeePeriod, $time1, $time2)
+{
+	$c=count($coffeeTime);
+	foreach($coffeeTime as $key=>$value){
+		$c=count($value);
+		for($i=0;$i<$c;$i++)
+		{
+			if($value[$i]>=$time1 && $value[$i]<=$time2)
+				$coffeePeriod[]=putOn($key,$value[$i]);
+		}
+	}
 }
 function readDrink($drink,$time)
 {
@@ -74,5 +89,10 @@ if($handle)
 	var_dump($coffee);
 	echo array_sum($coffee)." coffees was made<br><br>";
 	var_dump($coffeeTime);
+	$time1=readTime("9:00");
+	$time2=readTime("9:59");
+	howMDrinksInPeriod($coffeeTime, $coffeePeriod, $time1, $time2);
+	var_dump($coffeePeriod);
+	
 	fclose($handle);
 }
