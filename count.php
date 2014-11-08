@@ -92,10 +92,17 @@ if($handle)
 	var_dump($coffee);
 	echo array_sum($coffee)." coffees was made<br><br>";
 	var_dump($coffeeTime);
-	$time1=readTime("9:00");
-	$time2=readTime("9:59");
-	howMDrinksInPeriod($coffeeTime, $coffeePeriod, $time1, $time2);
-	var_dump($coffeePeriod);
-	
+	$counter=0;
+	for($i=0;$i<=7;$i++){
+		$time1=readTime("8:00+$i hour");
+		if($i==7) $time2=readTime("8:59+$i hour+1 minute");
+		else $time2=readTime("8:59+$i hour");
+		howMDrinksInPeriod($coffeeTime, $coffeePeriod, $time1, $time2);
+		echo "between ".date('H:i',$time1)."and ".date('H:i',$time2)." ".count($coffeePeriod)." ordered drinks<br>";  
+		$counter+=count($coffeePeriod);
+		unset($coffeePeriod);
+		
+	}
+	echo $counter." drinks was ordered";
 	fclose($handle);
 }
