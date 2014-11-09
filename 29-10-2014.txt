@@ -1,5 +1,5 @@
 //DE double espresso
-//E Espresso
+//SE Espresso
 //DMC Double Macciato
 //MC Macciato
 //GB Ginger beer

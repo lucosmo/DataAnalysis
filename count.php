@@ -23,6 +23,19 @@ function howMDrinksInPeriod($coffeeTime, &$coffeePeriod, $time1, $time2)
 		}
 	}
 }
+
+function checkDrink($drink)
+{
+	$espresso=array("SE","DE","SED","DED","SETA","DETA","SEDTA","DEDTA");
+	$latte=array("L","LD","LS","LSD","LTA","LDTA","LSDTA","LSTA","LL","LDL","LSL","LSDL");
+	$black=array("BC","BCTA","BCD","BCDTA","BCL","BCDL","WATA");
+	$cap=array("C","CD","CS","CSD","CTA","CDTA","CSDTA","CSTA","CL");
+	$macciato=array("MC","MCS","DMC","DMCS","MCD","MCSD","DMCD","DMCSD","MCTA","MCSTA","DMCTA","DMCSTA","MCDTA","MCSDTA","DMCDTA","DMCSDTA");
+	$mocca=array("M","MS","MD","MSD","ML","MSL","MSDL");
+	$cap=array("FW","FWD","FWS","FWSD","FWTA","FWDTA","FWSDTA","FWSTA","FWL","FWDL","FWSL","FWSDL");
+	
+}
+
 function readDrink($drink,$time)
 {
 	$n=1;
@@ -62,7 +75,7 @@ function readDrink($drink,$time)
 	
 }
 
-function readTime($time)
+function readTime($time) //why did I create this function? 
 {
 	return strtotime($time);
 }
