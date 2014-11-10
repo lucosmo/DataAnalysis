@@ -26,6 +26,7 @@ function howMDrinksInPeriod($coffeeTime, &$coffeePeriod, $time1, $time2)
 
 function checkDrink($drink)
 {
+	$cod;
 	$espresso=array("SE","DE","SED","DED","SETA","DETA","SEDTA","DEDTA");
 	$latte=array("L","LD","LS","LSD","LTA","LDTA","LSDTA","LSTA","LL","LDL","LSL","LSDL");
 	$black=array("BC","BCTA","BCD","BCDTA","BCL","BCDL","WATA");
@@ -34,6 +35,9 @@ function checkDrink($drink)
 	$mocca=array("M","MS","MD","MSD","ML","MSL","MSDL");
 	$cap=array("FW","FWD","FWS","FWSD","FWTA","FWDTA","FWSDTA","FWSTA","FWL","FWDL","FWSL","FWSDL");
 	
+	if((in_array($drink, $espresso) || (in_array($drink, $latte) || (in_array($drink, $black) || (in_array($drink, $macciato) || (in_array($drink, $mocca)||(in_array($drink, $cap))
+	$cof++;
+	return $cof;
 }
 
 function readDrink($drink,$time)
