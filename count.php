@@ -1,14 +1,15 @@
 <?php
 $coffee=(array)null; // array of names of drinks as key and number of drinks as value
 $coffeeTime=(array)null; // temprorary array of time of order - just for test, tommorow wanna remove it
-$coffeePeriod=(array)null;
-$fileName="29-10-2014.txt";
-
+$coffeePeriod=(array)null; //drinks ordered in particular period of time
+$fileName="02-11-2014.txt";
+$cof=0; //global coffee counter
 
 
 function putOn($drink, $time)
 {
-	return $a[$drink]=$time;
+	$a[$drink]=$time;
+	return $a;
 }
 function howMDrinksInPeriod($coffeeTime, &$coffeePeriod, $time1, $time2)
 {
@@ -26,18 +27,19 @@ function howMDrinksInPeriod($coffeeTime, &$coffeePeriod, $time1, $time2)
 
 function checkDrink($drink)
 {
-	$cod;
 	$espresso=array("SE","DE","SED","DED","SETA","DETA","SEDTA","DEDTA");
 	$latte=array("L","LD","LS","LSD","LTA","LDTA","LSDTA","LSTA","LL","LDL","LSL","LSDL");
 	$black=array("BC","BCTA","BCD","BCDTA","BCL","BCDL","WATA");
 	$cap=array("C","CD","CS","CSD","CTA","CDTA","CSDTA","CSTA","CL");
 	$macciato=array("MC","MCS","DMC","DMCS","MCD","MCSD","DMCD","DMCSD","MCTA","MCSTA","DMCTA","DMCSTA","MCDTA","MCSDTA","DMCDTA","DMCSDTA");
 	$mocca=array("M","MS","MD","MSD","ML","MSL","MSDL");
-	$cap=array("FW","FWD","FWS","FWSD","FWTA","FWDTA","FWSDTA","FWSTA","FWL","FWDL","FWSL","FWSDL");
+	$fw=array("FW","FWD","FWS","FWSD","FWTA","FWDTA","FWSDTA","FWSTA","FWL","FWDL","FWSL","FWSDL");
 	
-	if((in_array($drink, $espresso) || (in_array($drink, $latte) || (in_array($drink, $black) || (in_array($drink, $macciato) || (in_array($drink, $mocca)||(in_array($drink, $cap))
-	$cof++;
-	return $cof;
+	if((in_array($drink, $espresso)) || (in_array($drink, $latte)) || (in_array($drink, $black)) || (in_array($drink, $macciato)) || (in_array($drink, $mocca)) || (in_array($drink, $cap)) || (in_array($drink, $fw)))
+		return 1;
+	else
+		return 0;
+	
 }
 
 function readDrink($drink,$time)
@@ -48,6 +50,7 @@ function readDrink($drink,$time)
 	$inDrinkName=true;
 	$coffee=&$GLOBALS['coffee'];
 	$coffeeTime=&$GLOBALS['coffeeTime'];
+	$cof=&$GLOBALS['cof'];
 	for($i=0;$i<$signs;$i++)
 	{
 		if($i==0 && is_numeric($drink[$i])) {$n=(int)$drink[$i];continue;}
@@ -75,6 +78,7 @@ function readDrink($drink,$time)
 			for($i=0;$i<$n;$i++)
 				$coffeeTime[$drinkName][]=$time;
 		}
+		$cof+=checkDrink($drinkName);
 	}
 	
 }
@@ -117,9 +121,16 @@ if($handle)
 		howMDrinksInPeriod($coffeeTime, $coffeePeriod, $time1, $time2);
 		echo "between ".date('H:i',$time1)."and ".date('H:i',$time2)." ".count($coffeePeriod)." ordered drinks<br>";  
 		$counter+=count($coffeePeriod);
+		$cc=0;
+		foreach($coffeePeriod as $key=>$value){
+				list($k,$v)=each($value);
+				$cc+=checkDrink($k);
+		}
+		echo $cc." of them were coffees<br>";
 		unset($coffeePeriod);
 		
 	}
-	echo $counter." drinks was ordered";
+	echo $counter." drinks was ordered and ".$cof." of them were coffees<br>";
+	
 	fclose($handle);
 }
