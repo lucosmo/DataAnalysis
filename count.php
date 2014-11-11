@@ -2,7 +2,7 @@
 $coffee=(array)null; // array of names of drinks as key and number of drinks as value
 $coffeeTime=(array)null; // temprorary array of time of order - just for test, tommorow wanna remove it
 $coffeePeriod=(array)null; //drinks ordered in particular period of time
-$fileName="02-11-2014.txt";
+$fileName="29-10-2014.txt";
 $cof=0; //global coffee counter
 
 
@@ -47,7 +47,7 @@ function readDrink($drink,$time)
 	$n=1;
 	$signs=strlen($drink);
 	$drinkName='';
-	$inDrinkName=true;
+	
 	$coffee=&$GLOBALS['coffee'];
 	$coffeeTime=&$GLOBALS['coffeeTime'];
 	$cof=&$GLOBALS['cof'];
@@ -56,7 +56,7 @@ function readDrink($drink,$time)
 		if($i==0 && is_numeric($drink[$i])) {$n=(int)$drink[$i];continue;}
 		else 
 		{
-			if(ctype_alpha($drink[$i])&&$inDrinkName)
+			if(ctype_alpha($drink[$i]))
 			{
 				$drinkName.=$drink[$i];
 				continue;
@@ -114,10 +114,23 @@ if($handle)
 	echo array_sum($coffee)." coffees was made<br><br>";
 	var_dump($coffeeTime);
 	$counter=0;
+	$day=substr($fileName,0,10);
+	$day=strtotime($day);
+	$sunday=false;
+	if(date("w",$day)==0) $sunday=true;
 	for($i=0;$i<=7;$i++){
+		if($i==0&&$sunday) continue;
 		$time1=readTime("8:00+$i hour");
-		if($i==7) $time2=readTime("8:59+$i hour+1 minute");
-		else $time2=readTime("8:59+$i hour");
+		
+		if($i==7) 
+		{
+			if($sunday) break;
+			else $time2=readTime("8:59+$i hour+1 minute");
+		}
+		else{
+			if($i==6 && $sunday) $time2=readTime("14:30");
+			else $time2=readTime("8:59+$i hour");
+		}
 		howMDrinksInPeriod($coffeeTime, $coffeePeriod, $time1, $time2);
 		echo "between ".date('H:i',$time1)."and ".date('H:i',$time2)." ".count($coffeePeriod)." ordered drinks<br>";  
 		$counter+=count($coffeePeriod);
@@ -128,6 +141,7 @@ if($handle)
 		}
 		echo $cc." of them were coffees<br>";
 		unset($coffeePeriod);
+		if($i==6 && $sunday) break;
 		
 	}
 	echo $counter." drinks was ordered and ".$cof." of them were coffees<br>";
