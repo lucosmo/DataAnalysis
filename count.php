@@ -42,6 +42,44 @@ function checkDrink($drink)
 	
 }
 
+function findMac($coffeeArray)
+{
+	reset($coffeeArray);
+	$max=max($coffeeArray);
+	echo "max coffees - $max<br>";
+	var_dump($coffeeArray);
+	while(($coffee=current($coffeeArray))!==false){
+		if($coffee==$max)
+			echo key($coffeeArray)." - $max<br>";
+		next($coffeeArray);
+	}
+}
+
+function topCoffee($coffeeArray)
+{
+	$espresso=array("SE","DE","SED","DED","SETA","DETA","SEDTA","DEDTA");
+	$latte=array("L","LD","LS","LSD","LTA","LDTA","LSDTA","LSTA","LL","LDL","LSL","LSDL");
+	$black=array("BC","BCTA","BCD","BCDTA","BCL","BCDL","WATA");
+	$cap=array("C","CD","CS","CSD","CTA","CDTA","CSDTA","CSTA","CL");
+	$macciato=array("MC","MCS","DMC","DMCS","MCD","MCSD","DMCD","DMCSD","MCTA","MCSTA","DMCTA","DMCSTA","MCDTA","MCSDTA","DMCDTA","DMCSDTA");
+	$mocca=array("M","MS","MD","MSD","ML","MSL","MSDL");
+	$fw=array("FW","FWD","FWS","FWSD","FWTA","FWDTA","FWSDTA","FWSTA","FWL","FWDL","FWSL","FWSDL");
+
+	$tmpCoffee=array("E"=>0,"L"=>0,"B"=>0,"C"=>0,"MC"=>0,"M"=>0,"FW"=>0);
+	foreach($coffeeArray as $key=>$value){
+		list($k,$v)=each($value);
+		if(in_array($k, $espresso)) $tmpCoffee["E"]++;
+		elseif(in_array($k, $latte)) $tmpCoffee["L"]++;
+		elseif(in_array($k, $black)) $tmpCoffee["B"]++;
+		elseif(in_array($k, $cap)) $tmpCoffee["C"]++;
+		elseif(in_array($k, $macciato)) $tmpCoffee["MC"]++;
+		elseif(in_array($k, $mocca)) $tmpCoffee["M"]++;
+		elseif(in_array($k, $fw)) $tmpCoffee["FW"]++;
+		else continue;
+	}
+	findMac($tmpCoffee);
+}
+
 function readDrink($drink,$time)
 {
 	$n=1;
@@ -140,11 +178,12 @@ if($handle)
 				$cc+=checkDrink($k);
 		}
 		echo $cc." of them were coffees<br>";
+		topCoffee($coffeePeriod);
 		unset($coffeePeriod);
 		if($i==6 && $sunday) break;
 		
 	}
 	echo $counter." drinks was ordered and ".$cof." of them were coffees<br>";
-	
+
 	fclose($handle);
 }
