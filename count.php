@@ -3,8 +3,8 @@ $coffee=(array)null; // array of names of drinks as key and number of drinks as 
 $coffeeTime=(array)null; // temprorary array of time of order - just for test, tommorow wanna remove it
 $coffeePeriod=(array)null; //drinks ordered in particular period of time
 $fileName="29-10-2014.txt";
+$fileOutput="output.txt";
 $cof=0; //global coffee counter
-
 
 function putOn($drink, $time)
 {
@@ -16,11 +16,9 @@ function howMDrinksInPeriod($coffeeTime, &$coffeePeriod, $time1, $time2)
 	$c=count($coffeeTime);
 	foreach($coffeeTime as $key=>$value){
 		$c=count($value);
-		for($i=0;$i<$c;$i++)
-		{
+		for($i=0;$i<$c;$i++){
 			if($value[$i]>=$time1 && $value[$i]<=$time2)
 				$coffeePeriod[]=putOn($key,$value[$i]);
-				
 		}
 	}
 }
@@ -39,7 +37,6 @@ function checkDrink($drink)
 		return 1;
 	else
 		return 0;
-	
 }
 
 function findMac($coffeeArray)
@@ -135,6 +132,7 @@ function readBuffer($buffer)
 		readDrink($drink[$i],$time);
 }
 $handle=@fopen($fileName,"r");
+$handleOutput=@fopen($fileOutput,"a");
 if($handle)
 {
 	while(($buffer=fgets($handle))!=false)
@@ -142,24 +140,22 @@ if($handle)
 		$buffer=substr($buffer,0,count($buffer)-3); // -cr - lf
 		if($buffer[0]=='/'&&$buffer[1]=='/') continue; // ignore code explanation in test file header
 		readBuffer($buffer);
-		
 	}
 	if(!feof($handle))
-	{
 		echo "Error: unexpected fgets fail\n";
-	}
 	var_dump($coffee);
 	echo array_sum($coffee)." coffees was made<br><br>";
 	var_dump($coffeeTime);
 	$counter=0;
 	$day=substr($fileName,0,10);
+	fwrite($handleOutput, $day.PHP_EOL);
 	$day=strtotime($day);
 	$sunday=false;
 	if(date("w",$day)==0) $sunday=true;
 	for($i=0;$i<=7;$i++){
+		$dataOut="";
 		if($i==0&&$sunday) continue;
 		$time1=readTime("8:00+$i hour");
-		
 		if($i==7) 
 		{
 			if($sunday) break;
@@ -171,7 +167,8 @@ if($handle)
 		}
 		howMDrinksInPeriod($coffeeTime, $coffeePeriod, $time1, $time2);
 		echo "between ".date('H:i',$time1)."and ".date('H:i',$time2)." ".count($coffeePeriod)." ordered drinks<br>";  
-		$counter+=count($coffeePeriod);
+		$tmp=count($coffeePeriod);
+		$counter+=$tmp;
 		$cc=0;
 		foreach($coffeePeriod as $key=>$value){
 				list($k,$v)=each($value);
@@ -179,6 +176,8 @@ if($handle)
 		}
 		echo $cc." of them were coffees<br>";
 		topCoffee($coffeePeriod);
+		$dataOut=$time1." $tmp $cc\n";
+		fwrite($handleOutput, $dataOut.PHP_EOL);
 		unset($coffeePeriod);
 		if($i==6 && $sunday) break;
 		
