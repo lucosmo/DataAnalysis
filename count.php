@@ -148,7 +148,7 @@ if($handle)
 	var_dump($coffeeTime);
 	$counter=0;
 	$day=substr($fileName,0,10);
-	fwrite($handleOutput, $day.PHP_EOL);
+	fwrite($handleOutput, "#".$day.PHP_EOL);
 	$day=strtotime($day);
 	$sunday=false;
 	if(date("w",$day)==0) $sunday=true;
