@@ -2,7 +2,7 @@
 $coffee=(array)null; // array of names of drinks as key and number of drinks as value
 $coffeeTime=(array)null; // temprorary array of time of order - just for test, tommorow wanna remove it
 $coffeePeriod=(array)null; //drinks ordered in particular period of time
-$fileName="02-11-2014.txt";
+$fileName="29-10-2014.txt";
 $fileOutput="output.txt";
 $cof=0; //global coffee counter
 
@@ -145,25 +145,25 @@ if($handle)
 		if($buffer[0]=='/'&&$buffer[1]=='/') continue; // ignore code explanation in test file header
 		readBuffer($buffer);
 	}
-	if(!feof($handle))
+	if(!(feof($handle)&&feof($handleOutput)))
 		echo "Error: unexpected fgets fail\n";
 	var_dump($coffee);
 	echo array_sum($coffee)." drinks was made<br><br>";
 	var_dump($coffeeTime);
 	$counter=0;
 	$day=substr($fileName,0,10);
-	//fwrite($handleOutput, "#".$day.PHP_EOL);
+	fwrite($handleOutput, "#".$day.PHP_EOL);
 	$day=strtotime($day);
 	$sunday=false;
 	if(date("w",$day)==0) $sunday=true;
 	for($i=0;$i<=7;$i++){
 		$dataOut="";
-		if($i==0&&$sunday) continue;
+		if($i==0&&$sunday) continue; //sunday orders start at 9 not 8
 		$time1=readTime("8:00+$i hour");
 		if($i==7) 
 		{
-			if($sunday) break;
-			else $time2=readTime("8:59+$i hour+1 minute");
+			if($sunday) break; //sundey orders stop at 14:30 not 16
+			else $time2=readTime("8:59+$i hour+1 minute"); //just round to 16
 		}
 		else{
 			if($i==6 && $sunday) $time2=readTime("14:30");
@@ -171,22 +171,24 @@ if($handle)
 		}
 		howMDrinksInPeriod($coffeeTime, $coffeePeriod, $time1, $time2);
 		echo "between ".date('H:i',$time1)."and ".date('H:i',$time2)." ".count($coffeePeriod)." ordered drinks<br>";  
-		$tmp=count($coffeePeriod);
+		$tmp=count($coffeePeriod); 
 		$counter+=$tmp;
 		$cc=0;
-		foreach($coffeePeriod as $key=>$value){
+		foreach($coffeePeriod as $key=>$value){//count how many coffees ($cc) in the array of ordered drinks
 				list($k,$v)=each($value);
 				$cc+=checkDrink($k);
 		}
 		echo $cc." of them were coffees<br>";
 		topCoffee($coffeePeriod);
-		$dataOut=$time1." $tmp $cc\n";
-		//fwrite($handleOutput, $dataOut.PHP_EOL);
+		$dataOut=$time1." $tmp $cc";
+		fwrite($handleOutput, $dataOut.PHP_EOL);
 		unset($coffeePeriod);
 		if($i==6 && $sunday) break;
 		
 	}
 	echo $counter." drinks was ordered and ".$cof." of them were coffees<br>";
+	$dataOut="##$counter $cof";
+	fwrite($handleOutput, $dataOut.PHP_EOL);
 	$coffeePeriod=(array)null;
 	howMDrinksInPeriod($coffeeTime, $coffeePeriod, readTime("8:00"), readTime("16:00"));
 	$tmpa=topCoffee($coffeePeriod,1);
