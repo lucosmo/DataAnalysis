@@ -33,7 +33,10 @@ class DoFile(){
 			}
 		}	
 	}
-	function __construct($file)
+	private 
+	function __construct($file){
+		$this->open($file);
+	}
 	
 
 }
