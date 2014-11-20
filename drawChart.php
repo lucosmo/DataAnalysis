@@ -1,7 +1,11 @@
 <?php
 require_once("loadData.php");
 require_once("../jpgraph-3.5.0b1.tar/jpgraph-3.5.0b1/jpgraph-3.5.0b1/src/jpgraph.php");
+require_once ("../jpgraph-3.5.0b1.tar/jpgraph-3.5.0b1/jpgraph-3.5.0b1/src/jpgraph_line.php");
+require_once ("../jpgraph-3.5.0b1.tar/jpgraph-3.5.0b1/jpgraph-3.5.0b1/src/jpgraph_utils.inc.php");
 require_once ("../jpgraph-3.5.0b1.tar/jpgraph-3.5.0b1/jpgraph-3.5.0b1/src/jpgraph_bar.php");
+
+
 class drawChart{
 	private $obj;
 	private function openFile($file)
