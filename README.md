@@ -19,14 +19,12 @@ Current script creates also second array of drinks symbols as keys, and then cre
 It allows to check how many drinks was ordered in particular period of time.<br>
 <br>
 Features:
--counting drinks
+-counting drinks (total and in periods of time)
 -sorting:
 	+by name 
 	+by type (coffee or not)
 	+by time of order
-	
-Future features:<br>
--migrate from functional programming to oo programing<br>
--finding busiest periods of time<br>
--data visualisation (JS)<br>
+	+by type of coffee (latte, cappucino etc)
+-data visualisation using JpGraph version 3.5.0b1
+
 
