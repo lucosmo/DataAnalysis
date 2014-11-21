@@ -18,13 +18,13 @@ Script creates array of drinks symbols as keys, and number of ordered drinks as 
 Current script creates also second array of drinks symbols as keys, and then creates array of time of order for each drink (3-d array).<br>
 It allows to check how many drinks was ordered in particular period of time.<br>
 <br>
-Features:
--counting drinks (total and in periods of time)
--sorting:
-	+by name 
-	+by type (coffee or not)
-	+by time of order
-	+by type of coffee (latte, cappucino etc)
+Features:<br>
+-counting drinks (total and in periods of time)<br>
+-sorting:<br>
+	+by name <br>
+	+by type (coffee or not)<br>
+	+by time of order<br>
+	+by type of coffee (latte, cappucino etc)<br>
 -data visualisation using JpGraph version 3.5.0b1
 
 
