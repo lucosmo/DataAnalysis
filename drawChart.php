@@ -8,8 +8,7 @@ require_once ("../jpgraph-3.5.0b1.tar/jpgraph-3.5.0b1/jpgraph-3.5.0b1/src/jpgrap
 
 class drawChart{
 	private $obj;
-	private function openFile($file)
-	{
+	private function openFile($file){
 		$DoFile=new DoFile($file);
 		$this->obj=$DoFile;
 	}
@@ -17,7 +16,7 @@ class drawChart{
 		$this->openFile($file);
 	}
 	function getDate(){
-		return $this->obj->dateDay;
+		return $this->obj->dateDay; //date of data
 	}
 	function getPeriodTime(){
 		return $this->obj->periodTime; //time of start of period of time
@@ -32,6 +31,6 @@ class drawChart{
 		return $this->obj->drinks; //drinks in total in whole time of the day
 	}
 	function getCoffees(){
-		return $this->obj->coffees;
+		return $this->obj->coffees; //coffees in total 
 	}
 }
