@@ -2,10 +2,10 @@ DataAnalysis
 ============
 
 Script reads data from test files. Each test file consists of header of code of names of drinks e.g.:<br>
-//DE double espresso<br>
-//SE Espresso<br>
-//DMC Double Macciato<br>
-//MC Macciato<br><br>
+- DE double espresso<br>
+- SE Espresso<br>
+- DMC Double Macciato<br>
+- MC Macciato<br><br>
 Then there is row consists of time of the order and ordered drinks e.g.:<br>
 11:54 DE SE<br>
 11:51 MC SE<br>
